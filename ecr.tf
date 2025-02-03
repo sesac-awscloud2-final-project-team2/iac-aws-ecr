@@ -1,6 +1,6 @@
 data "aws_caller_identity" "current" {}
 
-resource "aws_ecr_repository" "my_repo" {
+resource "aws_ecr_repository" "travelog_repo" {
   name                 = var.repository_name
   image_tag_mutability = "MUTABLE"  # 태그 변경 가능
   tags                 = {
@@ -16,8 +16,8 @@ resource "aws_ecr_repository" "my_repo" {
   }
 }
 
-resource "aws_ecr_repository_policy" "my_repo_policy" {
-  repository = aws_ecr_repository.my_repo.name
+resource "aws_ecr_repository_policy" "travelog_repo_policy" {
+  repository = aws_ecr_repository.travelog_repo.name
 
   policy = jsonencode({
     Version = "2012-10-17"
