@@ -12,7 +12,7 @@ resource "aws_ecr_repository" "travelog_repo" {
   }
   encryption_configuration {
     encryption_type = "KMS"
-    kms_key         = var.kms_key_arn 
+    kms_key         = var.kms_key_arn
   }
 }
 
